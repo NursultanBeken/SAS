@@ -3,7 +3,6 @@ data testfile;
 infile test; 
 input id 1 name $ 3-5; 
 newvar=id+7; 
-datalines; 
 run; 
 data _null_; 
 set work.testfile; 
