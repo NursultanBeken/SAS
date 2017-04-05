@@ -1,0 +1,8 @@
+proc export 
+data=&SYSLAST
+dbms=dlm /*разделитель будет определен ниже, так же можно указать TAB*/
+outfile="/sas/user_data/em_projects/loyal_clients%sysfunc(date(),date).txt" 
+replace;
+ delimiter=','; /*определяем разделитель */
+putnames=no;
+run;
