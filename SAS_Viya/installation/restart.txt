@@ -1,0 +1,55 @@
+
+####STOP
+                        
+1. stop cas worker nodes
+sudo /etc/init.d/sas-viya-all-services stop
+          
+2. stop cas on cas controller
+sudo systemctl stop sas-viya-cascontroller-default
+
+3. stop all on cas controller
+sudo /etc/init.d/sas-viya-all-services stop
+
+4. on viya inetrfaces stop SAS Infrastructure Data Server cluster
+sudo systemctl stop sas-viya-sasdatasvrc-postgres
+
+5. on viya inetrfaces stop  SAS Message Broker (RabbitMQ).
+sudo systemctl stop  sas-viya-rabbitmq-server-default
+
+6. on viya inetrfaces stop SAS Configuration Server.
+sudo systemctl stop  sas-viya-vault-default
+                         
+7. Stop all on SAS Viya inetrfaces
+sudo /etc/init.d/sas-viya-all-services stop
+                                                                              
+###START
+1.start the SAS Configuration Server (Consul) on all servers
+sudo systemctl start  sas-viya-consul-default
+
+start the SAS Configuration Server (Consul) on CAS worker
+sudo systemctl start  sas-viya-consul-default
+
+2.Start all instances of SAS Secret Manager (Vault).
+sudo systemctl start sas-viya-vault-default
+
+3. Start SAS Message Broker (RabbitMQ).
+sudo systemctl start  sas-viya-rabbitmq-server-default
+
+
+4. on viya inetrfaces start SAS Infrastructure Data Server cluster
+sudo systemctl start sas-viya-sasdatasvrc-postgres
+
+
+5.Start the HTTP proxy server (Apache HTTP Server).
+ sudo systemctl start  httpd
+
+6. Start all remaining servers and services:
+sudo /etc/init.d/sas-viya-all-services start
+
+7. start all on cas conroller
+    sudo /etc/init.d/sas-viya-all-services start 
+
+8. start all on cas workers
+sudo /etc/init.d/sas-viya-all-services start 
+
+                   
