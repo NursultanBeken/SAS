@@ -4,7 +4,7 @@ The puprose of the repository is to collect all my experience from working with 
 
 ## SAS products: 
 * SAS Base
-* SAS DIS
+* SAS Data Integration Studio
 * SAS EG
 * SAS VIYA
 * SAS VA
