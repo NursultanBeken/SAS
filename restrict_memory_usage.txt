@@ -1,0 +1,17 @@
+in /opt/sas/sashome/SASFoundation/9.4/nls/u8/sasv9.cfg
+-memsize 24G
+in /opt/sas/config/Lev1/SASApp/sasv9_usermods.cfg
+-memsize 25G
+-sortsize 15G
+in /opt/sas/config/Lev1/CXTApp/sasv9_usermods.cfg
+-memsize 24G
+
+Restart spawner and checked that the options were applied
+proc options option=MEMSIZE value;
+run;
+proc options option=SORTSIZE value;
+run;
+will return result in KB
+
+NOTE! http://support.sas.com/kb/46/748.html
+Memory used by database clients is not constrained by the MEMSIZE option
